@@ -26,3 +26,4 @@ The function's main goal is to provide information about Target stores and infor
 #
 ##### A function that figures out the city with the most Target stores
 ######
+**`function getCitiesWithMostTargets()`**
