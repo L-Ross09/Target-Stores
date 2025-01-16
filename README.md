@@ -23,7 +23,6 @@ The function's main goal is to provide information about Target stores and infor
 ###### @var distance {Number} - The overall distance of how far longitude and latitude the target is
 ###### @return {String} - The address of the closest target to the given longitude and latitude
 **`function getTargetClosestToMe(longitude, latitude)`**
-
-
+#
 ##### A function that figures out the city with the most Target stores
 ######
