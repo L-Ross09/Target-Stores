@@ -70,8 +70,6 @@ for(var i = 0; i < cityCounts.length; i++){
 }
 console.log(getCitiesWithMostTargets())
 
-
-    
         
 function getTargetAddressesIn(stateOrCity){
 var addressLoco =[];
