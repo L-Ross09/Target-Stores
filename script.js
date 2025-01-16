@@ -2,7 +2,7 @@ var url = "https://raw.githubusercontent.com/b-mcavoy/datasets/refs/heads/main/M
 var address = getColumn(url, 1);
 var city = getColumn(url, 2);
 var county = getColumn(url,3);
-var state = getColumn(url, 8);
+var states = getColumn(url, 8);
 
 // Function to get a list of unique states
 function getStatesWithTargets() {
