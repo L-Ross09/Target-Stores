@@ -66,14 +66,14 @@ for(var i = 0; i < cityCounts.length; i++){
         highestCity = cities[i]
     }
 }
-
+    }
 
 
     
         
 function getTargetAddressesIn(stateOrCity){
-            //This function is finding addresses to target stores in the area you list.
-            //Either in a State of in a City
+    //This function is finding addresses to target stores in the area you list.
+    //Either in a State of in a City
 var addressLoco =[];
  for(var i = 0; i < address.length; i++){
     if(stateOrCity == states[i] || stateOrCity == city[i] ){
