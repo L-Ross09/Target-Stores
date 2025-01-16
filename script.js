@@ -74,20 +74,22 @@ console.log(getCitiesWithMostTargets())
     
         
 function getTargetAddressesIn(stateOrCity){
-    //This function is finding addresses to target stores in the area you list.
-    //Either in a State of in a City
 var addressLoco =[];
+var wasMatch= false
  for(var i = 0; i < address.length; i++){
-    if(stateOrCity == states[i] || stateOrCity == city[i] ){
+    if(stateOrCity.toLowerCase() == states[i].toLowerCase() || stateOrCity.toLowerCase() == city[i].toLowerCase() ){
         addressLoco.push(address[i])
+        count += 1
+        wasMatch= true;
     }
  }
-
+if(wasMatch == false){
+    return "None Found"
+}
  return addressLoco;
 
 }
 
 console.log(getTargetAddressesIn(""))
-
 
 
