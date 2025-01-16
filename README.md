@@ -1,5 +1,5 @@
 # Target-Stores
-The function's main goal is to provide information abou target and information about it envolving location.
+The function's main goal is to provide information about Target stores and information about it envolving location.
 #
 #####  A helper function that Sifts through a list of states that have targest and creats a list of only the unique ones
 ###### @var uniqueState {List} - The final list of only unique states
@@ -24,3 +24,6 @@ The function's main goal is to provide information abou target and information a
 ###### @return {String} - The address of the closest target to the given longitude and latitude
 **`function getTargetClosestToMe(longitude, latitude)`**
 
+
+##### A function that figures out the city with the most Target stores
+######
