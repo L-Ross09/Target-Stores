@@ -69,7 +69,9 @@ for(var i = 0; i < cityCounts.length; i++){
 
 
 
-    function getTargetAddressesIn(stateOrCity){
+    
+        
+function getTargetAddressesIn(stateOrCity){
             //This function is finding addresses to target stores in the area you list.
             //Either in a State of in a City
 var addressLoco =[];
