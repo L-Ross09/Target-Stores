@@ -31,6 +31,39 @@ function howManyTargetsInAState(stateName) {
         return -1;  
     }
 
+    function getCitiesWithMostTargets(){
+var cities = [];
+    for(var i =0; i<city.length; i++){
+        if(!cities.includes(city[i].toLowerCase())){
+            cities.push(city[i].toLowerCase());
+        }
+    }
+    var cityCounts = [];
+    for(var i=0;i<cities.length; i++){
+        var count = 0;
+        for(var j = 0; j <city.length; j++){
+            if(cities[i].toLowerCase() == city[j].toLowerCase()){
+                count++;
+            }
+        }
+        cityCounts.push(count);
+    }
+
+
+var highestCity = "";
+var targetMax =0;
+for(var i = 0; i < cityCounts.length; i++){
+    if(targetMax < cityCounts[i]){
+        targetMax = cityCounts[i];
+        highestCity = cities[i]
+    }
+}
+
+
+return highestCity;
+}
+console.log(getCitiesWithMostTargets())
+
     return count;  // Return the count of targets for the given state
 }
 console.log(howManyTargetsInAState("maylnd"));
