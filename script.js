@@ -66,7 +66,9 @@ for(var i = 0; i < cityCounts.length; i++){
         highestCity = cities[i]
     }
 }
-    }
+    return highestCity;
+}
+console.log(getCitiesWithMostTargets())
 
 
     
@@ -85,9 +87,7 @@ var addressLoco =[];
 
 }
 
-console.log(getTargetAddressesIn("charlottesville"))
+console.log(getTargetAddressesIn(""))
 
 
-return highestCity;
-}
-console.log(getCitiesWithMostTargets())
+
