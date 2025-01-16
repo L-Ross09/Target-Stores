@@ -34,9 +34,6 @@ function howManyTargetsInAState(stateName) {
 }
 console.log(howManyTargetsInAState(""));
 
-   
-    
-    
     function getCitiesWithMostTargets(){
         //with this function we are looking to find the city that contains the most amount of targets.
         //The output that comes out should be chicago which has the most conpared to any city.
@@ -57,7 +54,7 @@ var cities = [];
         cityCounts.push(count);
     }
 
-
+        
 var highestCity = "";
 var targetMax =0;
 for(var i = 0; i < cityCounts.length; i++){
@@ -70,7 +67,6 @@ for(var i = 0; i < cityCounts.length; i++){
 }
 console.log(getCitiesWithMostTargets())
 
-        
 function getTargetAddressesIn(stateOrCity){
 var addressLoco =[];
 var wasMatch= false
