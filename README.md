@@ -25,9 +25,15 @@ The function's main goal is to provide information about Target stores and infor
 **`function getTargetClosestToMe(longitude, latitude)`**
 #
 ##### A function that figures out the city with the most Target stores
-######
+###### @var cities {array} - empty but can hold items
+###### @var cityCounts {array} - empty but can hold items
+###### @var highestCity {String} - holds an empty string variable
+###### @var targetMax{Number} - holds a number
+###### @return highestCity {List} - returns the city with the most amount of Target stores located in it
 **`function getCitiesWithMostTargets()`**
 #
 ##### A function that obtains multiple Target store addresses in a determined area
-######
+###### @var addressLoco {array} - empty but can hold items
+###### @var wasMatch {Boolean} - A variable that returns a different answer if you type the wrong thing or no output
+###### @return {List} - The addresses that match with the provided input
 **`function getTargetAddressesIn(stateOrCity)`**
