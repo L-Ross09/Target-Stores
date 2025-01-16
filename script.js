@@ -32,7 +32,7 @@ function howManyTargetsInAState(stateName) {
     }
   return count;  // Return the count of targets for the given state
 }
-console.log(howManyTargetsInAState("maylnd"));
+console.log(howManyTargetsInAState(""));
 
    
     
