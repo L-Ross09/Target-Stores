@@ -112,7 +112,7 @@ var wasMatch= false
  for(var i = 0; i < address.length; i++){
     if(stateOrCity.toLowerCase() == state[i].toLowerCase() || stateOrCity.toLowerCase() == city[i].toLowerCase() ){
         addressLoco.push(address[i])
-        count += 1
+        county += 1
         wasMatch= true;
     }
  }
