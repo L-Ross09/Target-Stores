@@ -7,10 +7,6 @@ var longitudes = getColumn(url, 5);
 var state = getColumn(url, 8);
 
 
-
-
-
-
 // Sifts through a list of states that have targest and creats a list of only the unique ones
 // uniqueState {List} - The final list of only unique states
 // return {List} - The list of only the unique states
