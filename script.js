@@ -2,37 +2,80 @@ var url = "https://raw.githubusercontent.com/b-mcavoy/datasets/refs/heads/main/M
 var address = getColumn(url, 1);
 var city = getColumn(url, 2);
 var county = getColumn(url,3);
-var states = getColumn(url, 8);
+var latitudes = getColumn(url,4);
+var longitudes = getColumn(url, 5);
+var state = getColumn(url, 8);
 
-// Function to get a list of unique states
+
+
+
+
+
+// Sifts through a list of states that have targest and creats a list of only the unique ones
+// uniqueState {List} - The final list of only unique states
+// return {List} - The list of only the unique states
 function getStatesWithTargets() {
-    var uniqueStates = [];
-    for (var i = 0; i < states.length; i++) {
-        if (!uniqueStates.includes(states[i])) {
-            uniqueStates.push(states[i]);
+    var uniqueState = [];
+    for (var i = 0; i < state.length; i++) {
+        if (!uniqueState.includes(state[i].toLowerCase())) {
+            uniqueState.push(state[i].toLowerCase());
         }
     }
-    return uniqueStates;
+    return uniqueState;
 }
 console.log(getStatesWithTargets())
 
+
+// Figures out how many targets are in the given state
+// stateName {String} - A string of the state names
+// count {Number} - A number to count how many are in the given state
+// wasMatch {Boolean} - A variable that returns a different answer if you type the wrong thing
+//  return {Number} - The number of targets in a state
 function howManyTargetsInAState(stateName) {
     // Count the number of targets in the given state (stateName)
     var count = 0;
     var wasMatch = false;
-    for (var i = 0; i < states.length; i++) {
-        if (states[i] == statesName) {
+    for (var i = 0; i < state.length; i++) {
+        if (state[i] == stateName) {
             count += 1;  // Inplement the count when the state matches
-            wasMatch= true;
+            wasMatch = true;
         }
 
     }
     if (wasMatch == false) {
         return -1;  
     }
-  return count;  // Return the count of targets for the given state
+
+    return count;  // Return the count of targets for the given state
 }
-console.log(howManyTargetsInAState(""));
+console.log(howManyTargetsInAState("California"));
+
+// Measures the closest target to your longitude and latitude
+// longitude {Number} A code that has all of the longitudes
+// latitude {Number} A code that has all of the latitudes
+// shortestDistance {Number} A code that holds the shortest distance you can have between you and your target
+// rise {Number} - A number that has the rise of your longitude
+// run {Number} - A number that has the run of your latitude
+// hypoteneuse {Number} - The longest side of a right triangle by taking the rise and run giving us a distance
+// distance {Number} - The overall distance of how far longitude and latitude the target is
+// return {String} - The address of the closest target to the given longitude and latitude
+function getTargetClosestToMe(longitude, latitude){
+    var shortestDistance = 100000000000;
+    var closestTarget ="";
+    for (var i = 0; i < address.length; i++) {
+        var rise = (longitudes[i] - longitude)
+        var run =  (latitudes[i] - latitude)
+        var hypoteneuse = (rise * rise) + (run * run)
+        var distance = Math.sqrt(hypoteneuse)
+        if(distance < shortestDistance){
+            shortestDistance = distance;
+            closestTarget = address[i]
+        }
+          
+    }
+    return closestTarget;
+}
+console.log(getTargetClosestToMe(32,-35))
 
     function getCitiesWithMostTargets(){
         //with this function we are looking to find the city that contains the most amount of targets.
@@ -71,7 +114,7 @@ function getTargetAddressesIn(stateOrCity){
 var addressLoco =[];
 var wasMatch= false
  for(var i = 0; i < address.length; i++){
-    if(stateOrCity.toLowerCase() == states[i].toLowerCase() || stateOrCity.toLowerCase() == city[i].toLowerCase() ){
+    if(stateOrCity.toLowerCase() == state[i].toLowerCase() || stateOrCity.toLowerCase() == city[i].toLowerCase() ){
         addressLoco.push(address[i])
         count += 1
         wasMatch= true;
@@ -85,5 +128,3 @@ if(wasMatch == false){
 }
 
 console.log(getTargetAddressesIn(""))
-
-
